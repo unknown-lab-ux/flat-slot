@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlatShot – Straighten Product Photos &amp; White Background Maker (Free, Private)</title>
+<meta name="description" content="Auto-detect, straighten and put product photos on a clean white background. Free, runs in your browser – photos never leave your device.">
+<meta name="keywords" content="product photo editor, white background maker, straighten photo, perspective correction, background remover, ecommerce product images, door photos">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2d5bff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FlatShot – Straighten Product Photos &amp; White Background Maker">
+<meta property="og:description" content="Crooked in. Straight out. Flatten product photos onto pure white, right in your browser.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1419'/%3E%3Crect x='10' y='6' width='12' height='20' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"FlatShot","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Straighten product photos and place them on a clean white background. Runs in the browser; images are never uploaded.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{--ink:#0f1419;--mut:#5b6573;--blue:#2d5bff;--mist:#e6e9ee;--wood:#c98a43;--paper:#fbfbfa}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:500;color:var(--ink);background:radial-gradient(#0f141914 1px,transparent 1px) 0 0/22px 22px var(--paper);min-height:100vh}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+header{max-width:1040px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo i{width:26px;height:26px;background:var(--ink);display:grid;place-items:center;border-radius:5px}
+.logo i::after{content:"";width:9px;height:16px;background:#fff}
+main{max-width:1040px;margin:auto;padding:0 22px 64px}
+.marks{position:relative}
+.marks::before{--m:linear-gradient(var(--blue),var(--blue));content:"";position:absolute;inset:-9px;pointer-events:none;background:var(--m) 0 0/26px 2px,var(--m) 0 0/2px 26px,var(--m) 100% 0/26px 2px,var(--m) 100% 0/2px 26px,var(--m) 0 100%/26px 2px,var(--m) 0 100%/2px 26px,var(--m) 100% 100%/26px 2px,var(--m) 100% 100%/2px 26px;background-repeat:no-repeat}
+.hero{display:grid;gap:44px;align-items:center;padding-top:26px}
+@media(min-width:820px){.hero{grid-template-columns:1.15fr .85fr;gap:64px;padding-top:60px}}
+h1{font-size:clamp(46px,12vw,96px);line-height:.9;font-weight:800;letter-spacing:-.05em}
+h1 em{display:block;font-style:normal;color:#9aa3b1;transform:perspective(420px) rotateX(34deg) skewX(-9deg);transform-origin:0 100%;margin-bottom:.06em}
+.sub{margin-top:22px;max-width:30ch;color:var(--mut);font-size:19px;line-height:1.35}
+.drop{display:grid;gap:14px;justify-items:center;padding:34px 22px;background:#fff;cursor:pointer;text-align:center}
+.drop small{color:var(--mut);font-size:14px}
+.demo{width:100%;max-width:230px;aspect-ratio:1;display:grid;place-items:center;animation:bg 4.4s ease-in-out infinite}
+.demo b{width:40%;height:76%;background:repeating-linear-gradient(90deg,var(--wood) 0 13px,#a9702c 13px 15px);box-shadow:0 12px 22px #0004;animation:flat 4.4s ease-in-out infinite}
+@keyframes flat{0%,12%{transform:perspective(260px) rotateY(-40deg) rotateZ(7deg)}45%,86%{transform:none}100%{transform:perspective(260px) rotateY(-40deg) rotateZ(7deg)}}
+@keyframes bg{0%,12%{background:#c9ced8}45%,86%{background:#fff}100%{background:#c9ced8}}
+.btn,.ghost{font:inherit;font-weight:800;font-size:16px;border-radius:99px;padding:13px 26px;cursor:pointer;border:2px solid var(--ink);display:inline-block}
+.btn{background:var(--ink);color:#fff}.btn:hover{background:var(--blue);border-color:var(--blue)}
+.ghost{background:transparent;color:var(--ink)}.ghost:hover{background:var(--ink);color:#fff}
+.why{margin-top:96px;display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.why h2{grid-column:1/-1;font-size:clamp(26px,4.5vw,40px);letter-spacing:-.035em;line-height:1.05;max-width:18ch}
+.why h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.why p{color:var(--mut);line-height:1.5;max-width:34ch}
+.steps{display:flex;gap:26px;margin:6px 0 20px}
+.steps button{font:inherit;font-weight:800;font-size:16px;background:none;border:0;border-bottom:3px solid transparent;padding:6px 0;color:var(--mut);cursor:pointer;display:flex;gap:8px}
+.steps b{color:var(--blue)}
+.steps .on{color:var(--ink);border-color:var(--blue)}
+.stage{display:grid;place-items:center;padding:20px;background:var(--mist);min-height:260px;margin:9px}
+#cv{touch-action:none;cursor:grab;max-width:100%}
+.stage.res #cv{touch-action:auto;cursor:default;box-shadow:0 14px 34px #0f141926}
+#busy{position:absolute;inset:0;background:#fffe;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;font-weight:800;z-index:2}
+#busy i{width:36px;height:36px;border-radius:50%;border:4px solid var(--mist);border-top-color:var(--blue);animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(1turn)}}
+.dock{display:grid;gap:14px;margin-top:26px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chip{position:relative;display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:99px;border:2px solid #cfd4dc;font-weight:800;font-size:15px;cursor:pointer;background:#fff}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip:has(input:checked){background:var(--ink);border-color:var(--ink);color:#fff}
+.chip:has(:focus-visible){outline:3px solid var(--blue);outline-offset:2px}
+.rng{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
+.rng input{accent-color:var(--blue);width:140px}
+.hint{margin-top:18px;color:var(--mut);min-height:1.4em;font-size:15px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><i></i>FlatShot</div>
+  <button class="ghost" id="new" hidden>New photo</button>
+</header>
+<main>
+<noscript>Please enable JavaScript to use this tool.</noscript>
+
+<section id="hero">
+  <div class="hero">
+    <div>
+      <h1><em>Crooked in.</em>Straight out.</h1>
+      <p class="sub">Drop a product photo. Get it flat, on pure white, right in your browser.</p>
+    </div>
+    <label class="drop marks" id="drop">
+      <div class="demo" role="img" aria-label="A tilted door becoming straight on a white background"><b></b></div>
+      <span class="btn">Choose photo</span>
+      <small>or drop it here</small>
+      <input type="file" id="file" accept="image/*" hidden>
+    </label>
+  </div>
+  <div class="why">
+    <h2>Product photos that sell, without a studio</h2>
+    <div><h3>Straighten any angle</h3><p>Auto-detects the door or panel and flattens it into a perfectly front-facing image. Fine-tune the four corners if needed.</p></div>
+    <div><h3>Pure white background</h3><p>Ready for marketplaces, catalogs and WhatsApp stores, with square or 4:5 canvases and even spacing.</p></div>
+    <div><h3>Private and free</h3><p>Everything runs on your phone or computer. Your photos are never uploaded to a server.</p></div>
+  </div>
+</section>
+
+<section id="work" hidden aria-label="Photo editor">
+  <nav class="steps"><button class="on"><b>1</b>Straighten</button><button><b>2</b>White background</button></nav>
+  <div class="stage marks" id="stage">
+    <canvas id="cv"></canvas>
+    <div id="busy" hidden><i></i><span></span></div>
+  </div>
+  <p class="hint" id="hint"></p>
+  <div class="dock" id="d1">
+    <div class="row"><button class="btn" id="go">Straighten</button><button class="ghost" id="auto">Auto detect</button><button class="ghost" id="skip">Skip</button></div>
+  </div>
+  <div class="dock" id="d2" hidden>
+    <div class="row">
+      <label class="chip"><input type="radio" name="r" value="0" checked>Fit</label>
+      <label class="chip"><input type="radio" name="r" value="1">1:1</label>
+      <label class="chip"><input type="radio" name="r" value="0.8">4:5</label>
+      <label class="chip"><input type="checkbox" id="oc">AI cutout (slow)</label>
+      <label class="chip"><input type="checkbox" id="os">Shadow</label>
+      <label class="chip"><input type="checkbox" id="oen">Enhance</label>
+      <label class="rng">Space <input type="range" id="pad" min="0" max="25" value="6"></label>
+      <label class="rng">Trim <input type="range" id="trim" min="0" max="8" value="1"></label>
+    </div>
+    <div class="row"><button class="btn" id="jpg">Save JPG</button><button class="ghost" id="png">Save PNG</button></div>
+  </div>
+</section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s),mk=(w,h)=>Object.assign(document.createElement('canvas'),{width:w,height:h});
+const cv=$('#cv'),c=cv.getContext('2d'),stage=$('#stage');
+let src,sw,sh,pts,rect,cut,out,step=1,k=1,drag=-1,dirty=1,working=0,again=0,mod,sdat,enh,tap;
+const opt={cut:0,sh:0,en:0,ratio:0,pad:.06,trim:.01};
+const busy=t=>{$('#busy').hidden=!t;$('#busy span').textContent=t||''};
+
+function morph(m,w,h,r,er){
+  const t=[m,new Uint8Array(m.length),new Uint8Array(m.length)];
+  for(let z=0;z<2;z++){
+    const hz=!z,A=hz?w:h,B=hz?h:w,st=hz?1:w,ln=hz?w:1,a=t[z],b=t[z+1];
+    for(let l=0;l<B;l++)for(let p=0;p<A;p++){
+      let v=er?1:0;
+      for(let d=-r;d<=r;d++){const q=p+d;if(q<0||q>=A)continue;const s=a[l*ln+q*st];if(er?!s:s){v=er?0:1;break}}
+      b[l*ln+p*st]=v;
+    }
+  }
+  return t[2];
+}
+function fitLine(P,A,B){
+  const dx=B[0]-A[0],dy=B[1]-A[1],L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,tol=Math.max(3,L*.06);
+  let S=P.filter(p=>{const t=((p[0]-A[0])*ux+(p[1]-A[1])*uy)/L,e=Math.abs(-(p[0]-A[0])*uy+(p[1]-A[1])*ux);return t>.12&&t<.88&&e<tol}),line=null;
+  for(let k=0;k<2&&S.length>=8;k++){
+    let mx=0,my=0;S.forEach(p=>{mx+=p[0];my+=p[1]});mx/=S.length;my/=S.length;
+    let a=0,b=0,c=0;S.forEach(p=>{const x=p[0]-mx,y=p[1]-my;a+=x*x;b+=x*y;c+=y*y});
+    const th=.5*Math.atan2(2*b,a-c),vx=Math.cos(th),vy=Math.sin(th);
+    line={m:[mx,my],v:[vx,vy]};
+    const res=S.map(p=>Math.abs(-(p[0]-mx)*vy+(p[1]-my)*vx)),med=[...res].sort((q,r)=>q-r)[res.length>>1],lim=Math.max(1.5,med*2.5);
+    S=S.filter((p,i)=>res[i]<=lim);
+  }
+  return line;
+}
+const cross=(l1,l2)=>{
+  if(!l1||!l2)return null;
+  const[x1,y1]=l1.m,[a,b]=l1.v,[x2,y2]=l2.m,[c,d]=l2.v,den=a*d-b*c;
+  if(Math.abs(den)<.05)return null;
+  const t=((x2-x1)*d-(y2-y1)*c)/den;return[x1+a*t,y1+b*t];
+};
+const shoe=q=>Math.abs(q.reduce((s,p,i)=>{const n=q[(i+1)%4];return s+p[0]*n[1]-n[0]*p[1]},0))/2;
+
+function detectCore(D,w,h,sx,sy){
+  const n=w*h,U=new Float32Array(n),V=new Float32Array(n),Y=new Float32Array(n);
+  for(let i=0,j=0;i<n;i++,j+=4){const r=D[j],g=D[j+1],b=D[j+2];U[i]=r-g;V[i]=g-b;Y[i]=(r*.3+g*.59+b*.11)*.35}
+  sx=Math.min(w-1,Math.max(0,Math.round(sx)));sy=Math.min(h-1,Math.max(0,Math.round(sy)));
+  const mn=Math.min(w,h),R=Math.max(3,mn*.07|0),B=Math.max(2,mn*.03|0);
+  const pal=t=>{const M=new Map();for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(t(x,y)){const i=y*w+x;M.set(((U[i]/14+20)|0)*10000+((V[i]/14+20)|0)*100+((Y[i]/9)|0),i)}return[...M.values()]};
+  const F=pal((x,y)=>Math.abs(x-sx)<=R&&Math.abs(y-sy)<=R);
+  const fl=i=>{for(const k of F)if((U[i]-U[k])**2+(V[i]-V[k])**2+(Y[i]-Y[k])**2<300)return 1;return 0};
+  let G=[];
+  [(x,y)=>y<B,(x,y)=>y>=h-B,(x,y)=>x<B,(x,y)=>x>=w-B].forEach(t=>{
+    let c=0,k=0;for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(t(x,y)){k++;c+=fl(y*w+x)}
+    if(c<k*.3)G.push(...pal(t));
+  });
+  if(!G.length)G=pal((x,y)=>x<B||y<B||x>=w-B||y>=h-B);
+  const mc=F.map(k=>Math.hypot(U[k],V[k])).sort((p,q)=>p-q)[F.length>>1];
+  if(mc>40){const g2=G.filter(k=>Math.hypot(U[k],V[k])<mc*.75);if(g2.length>=8)G=g2}
+  const m=new Uint8Array(n);
+  for(let i=0;i<n;i++){
+    let a=1e9,b=1e9;
+    for(const k of F){const d=(U[i]-U[k])**2+(V[i]-V[k])**2+(Y[i]-Y[k])**2;if(d<a)a=d}
+    for(const k of G){const d=(U[i]-U[k])**2+(V[i]-V[k])**2+(Y[i]-Y[k])**2;if(d<b)b=d}
+    m[i]=a<=b?1:0;
+  }
+  const r=Math.max(1,Math.round(mn/110)),E=morph(m,w,h,r,1);
+  let s0=sy*w+sx;
+  if(!E[s0]){
+    let best=1e9;
+    for(let y=Math.max(0,sy-R);y<=Math.min(h-1,sy+R);y++)for(let x=Math.max(0,sx-R);x<=Math.min(w-1,sx+R);x++)
+      if(E[y*w+x]){const d=(x-sx)**2+(y-sy)**2;if(d<best){best=d;s0=y*w+x}}
+    if(best==1e9)return null;
+  }
+  const C=new Uint8Array(n),st=[s0];C[s0]=1;
+  while(st.length){
+    const i=st.pop(),x=i%w,y=(i/w)|0;
+    for(const j of [x>0&&i-1,x<w-1&&i+1,y>0&&i-w,y<h-1&&i+w])if(j!==false&&E[j]&&!C[j]){C[j]=1;st.push(j)}
+  }
+  const M=morph(C,w,h,r,0);for(let i=0;i<n;i++)M[i]&=m[i];
+  const pts=[],best=[1e9,-1e9,-1e9,1e9],ex=[[0,0],[0,0],[0,0],[0,0]];let area=0;
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+    const i=y*w+x;if(!M[i])continue;area++;
+    const s=x+y,d=x-y;
+    if(s<best[0]){best[0]=s;ex[0]=[x,y]}if(d>best[1]){best[1]=d;ex[1]=[x,y]}
+    if(s>best[2]){best[2]=s;ex[2]=[x,y]}if(d<best[3]){best[3]=d;ex[3]=[x,y]}
+    if(x==0||y==0||x==w-1||y==h-1||!M[i-1]||!M[i+1]||!M[i-w]||!M[i+w])pts.push([x,y]);
+  }
+  if(area<n*.04||area>n*.97)return null;
+  const L=ex.map((p,i)=>fitLine(pts,p,ex[(i+1)%4])),diag=Math.hypot(w,h);
+  const q=ex.map((p,j)=>{const c=cross(L[(j+3)%4],L[j]);return c&&Math.hypot(c[0]-p[0],c[1]-p[1])<diag*.12?c:p});
+  const ar=shoe(q)/area;
+  if(!(ar>.8&&ar<1.7))return ex;
+  const cen=[0,1].map(a=>ex.reduce((s,p)=>s+p[a],0)/4),NL=L.slice();
+  for(let i=0;i<4;i++){
+    if(!L[i])continue;
+    const A=q[i],Bq=q[(i+1)%4],tx=Bq[0]-A[0],ty=Bq[1]-A[1],tl=Math.hypot(tx,ty)||1,mx=(A[0]+Bq[0])/2,my=(A[1]+Bq[1])/2;
+    let nx=ty/tl,ny=-tx/tl;if((mx-cen[0])*nx+(my-cen[1])*ny<0){nx=-nx;ny=-ny}
+    const pr=[];
+    for(let k=0;;k++){
+      let u=0,v=0,y=0,f=0,ok=1;
+      for(let j=0;j<24;j++){
+        const t=.15+.7*j/23,x=Math.round(A[0]+tx*t+nx*k),yy=Math.round(A[1]+ty*t+ny*k);
+        if(x<0||yy<0||x>=w||yy>=h){ok=0;break}
+        const p=yy*w+x;u+=U[p];v+=V[p];y+=Y[p];f+=fl(p);
+      }
+      if(!ok)break;pr.push([u/24,v/24,y/24,f/24]);
+    }
+    if(pr.length<12||(pr[3][3]+pr[4][3]+pr[5][3])/3<.5)continue;
+    const av=(k,c)=>(pr[k][c]+pr[k+1][c]+pr[k+2][c])/3,stp=[];
+    for(let k=0;k<pr.length-5;k++)stp.push(Math.hypot(av(k,0)-av(k+3,0),av(k,1)-av(k+3,1),av(k,2)-av(k+3,2)));
+    const thr=Math.max(7,[...stp].sort((p,r)=>p-r)[stp.length>>1]*4);
+    let d=0;for(let k=stp.length-1;k>=0;k--)if(stp[k]>thr){d=k+3;break}
+    if(d&&pr[Math.min(pr.length-1,d+4)][3]<.35)NL[i]={m:[mx+nx*d,my+ny*d],v:(L[(i+2)%4]||L[i]).v};
+  }
+  const q2=ex.map((p,j)=>cross(NL[(j+3)%4],NL[j]));
+  return q2.every(p=>p&&p[0]>-w*.05&&p[0]<w*1.05&&p[1]>-h*.05&&p[1]<h*1.05)?q2:q;
+}
+function detect(S,sx,sy){
+  const s=Math.min(1,320/Math.max(S.width,S.height)),w=Math.round(S.width*s),h=Math.round(S.height*s),t=mk(w,h),x=t.getContext('2d',{willReadFrequently:true});
+  x.drawImage(S,0,0,w,h);
+  const r=detectCore(x.getImageData(0,0,w,h).data,w,h,sx*s,sy*s);
+  return r&&r.map(p=>({x:p[0]/s,y:p[1]/s}));
+}
+function initPts(){const i=.08;pts=[{x:sw*i,y:sh*i},{x:sw*(1-i),y:sh*i},{x:sw*(1-i),y:sh*(1-i)},{x:sw*i,y:sh*(1-i)}]}
+function auto(x,y){
+  const r=detect(src,x??sw/2,y??sh/2);
+  if(r){pts=r.map(p=>({x:Math.min(sw,Math.max(0,p.x)),y:Math.min(sh,Math.max(0,p.y))}));$('#hint').textContent='Door found. Drag a corner to fine-tune, or tap another object to detect it.'}
+  else{initPts();$('#hint').textContent='Could not find it. Drag the corners, or tap on the door.'}
+  dirty=1;
+}
+async function load(f){
+  if(!f||!f.type.startsWith('image/'))return;
+  try{
+    const b=await createImageBitmap(f),s=Math.min(1,2400/Math.max(b.width,b.height));
+    src=mk(Math.round(b.width*s),Math.round(b.height*s));src.getContext('2d').drawImage(b,0,0,src.width,src.height);
+    sw=src.width;sh=src.height;sdat=null;initPts();rect=cut=out=enh=null;auto();
+    $('#hero').hidden=true;$('#work').hidden=false;$('#new').hidden=false;go(1);
+  }catch(e){alert('Could not open this image. Try a JPG or PNG.')}
+}
+
+function fit(w,h){
+  const dpr=devicePixelRatio||1,dw=Math.max(160,Math.min(stage.clientWidth-40,innerHeight*.6*w/h)),dh=dw*h/w;
+  cv.style.width=dw+'px';cv.style.height=dh+'px';cv.width=Math.round(dw*dpr);cv.height=Math.round(dh*dpr);k=cv.width/w;return dpr;
+}
+function draw1(){
+  const d=fit(sw,sh);c.drawImage(src,0,0,cv.width,cv.height);
+  const P=pts.map(p=>[p.x*k,p.y*k]),L=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+  const poly=()=>P.forEach((p,i)=>c[i?'lineTo':'moveTo'](...p));
+  c.beginPath();c.rect(0,0,cv.width,cv.height);poly();c.closePath();c.fillStyle='rgba(15,20,25,.55)';c.fill('evenodd');
+  c.beginPath();poly();c.closePath();c.lineWidth=4*d;c.strokeStyle='#fff';c.stroke();c.lineWidth=2*d;c.strokeStyle='#2d5bff';c.stroke();
+  c.beginPath();c.lineWidth=d;c.strokeStyle='rgba(255,255,255,.7)';
+  [1/3,2/3].forEach(t=>[[0,1,3,2],[0,3,1,2]].forEach(([a,b,e,f])=>{c.moveTo(...L(P[a],P[b],t));c.lineTo(...L(P[e],P[f],t))}));c.stroke();
+  P.forEach(p=>{c.beginPath();c.arc(p[0],p[1],13*d,0,7);c.fillStyle='#fff';c.fill();c.lineWidth=4*d;c.strokeStyle='#2d5bff';c.stroke()});
+}
+const show2=()=>{fit(out.width,out.height);c.drawImage(out,0,0,cv.width,cv.height)};
+
+const pos=e=>{const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*sw,y:(e.clientY-r.top)/r.height*sh,s:r.width/sw}};
+cv.onpointerdown=e=>{
+  if(step!=1)return;const p=pos(e);let best=36;drag=-1;
+  pts.forEach((q,i)=>{const d=Math.hypot(q.x-p.x,q.y-p.y)*p.s;if(d<best){best=d;drag=i}});
+  if(drag>-1)cv.setPointerCapture(e.pointerId);else tap={x:e.clientX,y:e.clientY,p};
+};
+cv.onpointermove=e=>{if(drag<0)return;const p=pos(e);pts[drag]={x:Math.min(sw,Math.max(0,p.x)),y:Math.min(sh,Math.max(0,p.y))};dirty=1;draw1()};
+cv.onpointerup=e=>{if(tap&&Math.hypot(e.clientX-tap.x,e.clientY-tap.y)<8){auto(tap.p.x,tap.p.y);draw1()}tap=null;drag=-1};
+cv.onpointercancel=()=>{tap=null;drag=-1};
+
+function warp(){
+  const D=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),q=pts;
+  let w=(D(q[0],q[1])+D(q[3],q[2]))/2,h=(D(q[0],q[3])+D(q[1],q[2]))/2;
+  const m=Math.min(1,2000/Math.max(w,h));w=Math.max(8,Math.round(w*m));h=Math.max(8,Math.round(h*m));
+  const A=[];
+  [[0,0],[w,0],[w,h],[0,h]].forEach(([x,y],i)=>{const{x:u,y:v}=q[i];A.push([x,y,1,0,0,0,-u*x,-u*y,u],[0,0,0,x,y,1,-v*x,-v*y,v])});
+  for(let i=0;i<8;i++){
+    let p=i;for(let r=i+1;r<8;r++)if(Math.abs(A[r][i])>Math.abs(A[p][i]))p=r;
+    [A[i],A[p]]=[A[p],A[i]];
+    for(let r=0;r<8;r++)if(r!==i){const f=A[r][i]/A[i][i];for(let j=i;j<9;j++)A[r][j]-=f*A[i][j]}
+  }
+  const H=A.map((r,i)=>r[8]/r[i]),S=sdat||(sdat=src.getContext('2d').getImageData(0,0,sw,sh).data);
+  const o=mk(w,h),oc=o.getContext('2d'),O=oc.createImageData(w,h),T=O.data;
+  for(let y=0,n=0;y<h;y++)for(let x=0;x<w;x++,n+=4){
+    const z=H[6]*x+H[7]*y+1,
+      u=Math.min(sw-1.01,Math.max(0,(H[0]*x+H[1]*y+H[2])/z)),v=Math.min(sh-1.01,Math.max(0,(H[3]*x+H[4]*y+H[5])/z)),
+      x0=u|0,y0=v|0,fx=u-x0,fy=v-y0,i=(y0*sw+x0)*4,j=i+sw*4;
+    for(let ch=0;ch<3;ch++)T[n+ch]=(S[i+ch]*(1-fx)+S[i+4+ch]*fx)*(1-fy)+(S[j+ch]*(1-fx)+S[j+4+ch]*fx)*fy;
+    T[n+3]=255;
+  }
+  oc.putImageData(O,0,0);return o;
+}
+
+async function cutout(cn){
+  mod||=await import('https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/+esm').catch(()=>import('https://staticimgly.com/@imgly/background-removal/1.5.5/dist/index.js'));
+  const f=mod.removeBackground||mod.default,z=Math.min(1,768/Math.max(cn.width,cn.height)),sm=mk(Math.round(cn.width*z),Math.round(cn.height*z));
+  sm.getContext('2d').drawImage(cn,0,0,sm.width,sm.height);
+  const b=await new Promise(r=>sm.toBlob(r,'image/png')),pg=(key,a,t)=>busy(String(key).startsWith('fetch')&&t?'Loading AI model… '+Math.round(a/t*100)+'%':'Removing background…');
+  let res;try{res=await f(b,{model:'isnet_quint8',device:'gpu',progress:pg})}catch(e){res=await f(b,{model:'isnet_quint8',device:'cpu',progress:pg})}
+  const bm=await createImageBitmap(res),o=mk(cn.width,cn.height),x=o.getContext('2d');
+  x.drawImage(bm,0,0,o.width,o.height);x.globalCompositeOperation='source-in';x.drawImage(cn,0,0);return o;
+}
+function enhance(P){
+  const o=mk(P.width,P.height),x=o.getContext('2d');x.drawImage(P,0,0);
+  const I=x.getImageData(0,0,o.width,o.height),d=I.data,H=new Uint32Array(256);let n=0,a=0,lo=0,hi=255;
+  for(let i=0;i<d.length;i+=16)if(d[i+3]){H[(d[i]*.3+d[i+1]*.59+d[i+2]*.11)|0]++;n++}
+  for(let i=0;i<256;i++){a+=H[i];if(a<n*.01)lo=i;if(a<n*.99)hi=i}
+  const g=Math.min(1.35,235/Math.max(hi,120)),L=new Uint8Array(256).map((_,v)=>Math.max(0,Math.min(255,(v-lo*.5)*g)));
+  for(let i=0;i<d.length;i+=4){d[i]=L[d[i]];d[i+1]=L[d[i+1]];d[i+2]=L[d[i+2]]}
+  x.putImageData(I,0,0);return o;
+}
+async function render(){
+  if(working){again=1;return}working=1;
+  try{
+    let P=rect;
+    if(opt.cut){
+      if(!cut){busy('Loading AI model…');try{cut=await cutout(rect)}catch(e){opt.cut=0;$('#oc').checked=false;alert('AI cutout could not load. Check your internet connection.')}busy()}
+      P=cut||rect;
+    }
+    if(opt.en){if(!enh||enh.p!==P)enh={p:P,c:enhance(P)};P=enh.c}
+    const t=opt.trim,pw=P.width*(1-2*t),ph=P.height*(1-2*t),sx=P.width*t,sy=P.height*t;
+    const m=Math.max(pw,ph)*opt.pad,nw=pw+2*m,nh=ph+2*m,r=opt.ratio||nw/nh;
+    let W=nw,H=nh;nw/nh>r?H=nw/r:W=nh*r;
+    out=mk(Math.round(W),Math.round(H));
+    const o=out.getContext('2d'),dx=(out.width-pw)/2,dy=(out.height-ph)/2;
+    o.fillStyle='#fff';o.fillRect(0,0,out.width,out.height);
+    if(opt.sh){
+      const rw=pw*.56;o.save();o.translate(out.width/2,dy+ph);o.scale(1,.06);
+      const g=o.createRadialGradient(0,0,0,0,0,rw);g.addColorStop(0,'rgba(0,0,0,.38)');g.addColorStop(1,'rgba(0,0,0,0)');
+      o.fillStyle=g;o.beginPath();o.arc(0,0,rw,0,7);o.fill();o.restore();
+      o.shadowColor='rgba(0,0,0,.16)';o.shadowBlur=W*.02;o.shadowOffsetY=W*.006;
+    }
+    o.drawImage(P,sx,sy,pw,ph,dx,dy,pw,ph);
+    if(step==2)show2();
+  }finally{working=0;if(again){again=0;render()}}
+}
+
+function go(s){
+  step=s;$('#hint').hidden=s!=1;$('#d1').hidden=s!=1;$('#d2').hidden=s!=2;stage.classList.toggle('res',s==2);
+  document.querySelectorAll('.steps button').forEach((b,i)=>b.classList.toggle('on',i+1==s));
+  s==1?draw1():render();
+}
+function to2(){if(dirty||!rect){rect=warp();cut=null;dirty=0}go(2)}
+
+document.querySelectorAll('.steps button').forEach((b,i)=>b.onclick=()=>i?to2():go(1));
+$('#go').onclick=to2;
+$('#auto').onclick=()=>{auto();draw1()};
+$('#skip').onclick=()=>{rect=src;cut=null;dirty=0;go(2)};
+$('#d2').addEventListener('input',()=>{opt.cut=$('#oc').checked;opt.sh=$('#os').checked;opt.ratio=+$('[name=r]:checked').value;opt.pad=$('#pad').value/100;opt.en=$('#oen').checked;opt.trim=$('#trim').value/100;render()});
+const dl=t=>out&&out.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='product-white.'+t;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4e3)},t=='png'?'image/png':'image/jpeg',.95);
+$('#jpg').onclick=()=>dl('jpg');$('#png').onclick=()=>dl('png');
+$('#file').onchange=e=>load(e.target.files[0]);
+$('#new').onclick=()=>{$('#work').hidden=true;$('#hero').hidden=false;$('#new').hidden=true;$('#file').value=''};
+['dragover','drop'].forEach(t=>addEventListener(t,e=>{e.preventDefault();if(t=='drop')load(e.dataTransfer.files[0])}));
+addEventListener('resize',()=>{if($('#work').hidden)return;step==1?draw1():out&&show2()});
+</script>
+</body>
+</html>
